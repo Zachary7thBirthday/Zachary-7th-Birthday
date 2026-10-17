@@ -127,6 +127,7 @@
       text-shadow: 2px 2px 0px #000000;
     }
 
+    /* Full Picture Container & Racing Border */
     .photo-container {
       display: flex;
       justify-content: center;
@@ -135,26 +136,25 @@
       width: 100%;
     }
 
-    .photo-frame {
-      width: 270px;
-      height: 270px;
-      border-radius: 50%;
-      border: 8px solid var(--racing-red);
-      outline: 4px solid var(--racing-yellow);
-      background: #FFFFFF;
+    .photo-frame-full {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 18px;
+      border: 4px solid var(--racing-red);
+      outline: 3px solid var(--racing-yellow);
+      background: #000000;
       overflow: hidden;
-      box-shadow: 0 0 30px rgba(255, 23, 68, 0.6);
+      box-shadow: 0 0 25px rgba(255, 23, 68, 0.5);
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
     }
 
-    .photo-frame img {
-      width: 130%;
-      height: 130%;
-      object-fit: cover;
-      object-position: center 10%;
+    .photo-frame-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
     }
 
     .details-box {
@@ -409,9 +409,10 @@
         </div>
       </div>
 
+      <!-- Full Unclipped Picture Frame -->
       <div class="photo-container">
-        <div class="photo-frame">
-          <img src="zachary.png" alt="Zachary" onerror="this.onerror=null; this.src='https://via.placeholder.com/270x270?text=Zachary';">
+        <div class="photo-frame-full">
+          <img src="zachary.png" alt="Zachary" onerror="this.onerror=null; this.src='https://via.placeholder.com/380x380?text=Zachary';">
         </div>
       </div>
 
