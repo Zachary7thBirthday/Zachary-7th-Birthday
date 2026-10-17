@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zachary is Turning 7! - Birthday Invitation & RSVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Canvas Confetti for friendly celebration effect -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #F1F3F5;
+            color: #1A1A1A;
+        }
+
+        .font-racing {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        /* Subtle racing checkered accent strip */
+        .checkered-accent {
+            background-image: 
+                linear-gradient(45deg, #111 25%, transparent 25%), 
+                linear-gradient(-45deg, #111 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #111 75%), 
+                linear-gradient(-45deg, transparent 75%, #111 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+
+        /* Large touchable radios for seniors */
+        .status-option input:checked + div {
+            border-color: #D91B1B;
+            background-color: #FFF5F5;
+            box-shadow: 0 0 0 2px #D91B1B;
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            .card-container { box-shadow: none !important; border: 1px solid #ccc !important; }
+        }
+    </style>
+</head>
+<body class="min-h-screen py-6 px-4 flex flex-col items-center justify-start">
+
+    <!-- Top Senior-Friendly Navigation / Helper Banner -->
+    <div class="no-print max-w-md w-full mb-3 bg-white p-3 rounded-2xl shadow-sm border border-gray-200 flex items-center justify-between gap-2 text-xs font-medium text-gray-700">
+        <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+            <span>Online RSVP Active</span>
+        </div>
+        <a href="tel:09170000000" class="text-red-700 font-bold hover:underline flex items-center gap-1">
+            📞 Need help? Call Us
+        </a>
+    </div>
+
+    <!-- Main Invitation Card -->
+    <div class="card-container max-w-md w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200 flex flex-col">
+        
+        <!-- Header Flag Ribbon -->
+        <div class="w-full h-3 checkered-accent opacity-90"></div>
+        <div class="w-full h-2 bg-red-600"></div>
+
+        <div class="p-6 sm:p-8 space-y-6 text-center">
+
+            <!-- Subtitle Header -->
+            <div class="inline-block bg-red-100 text-red-800 text-xs sm:text-sm font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
+                🏁 You Are Invited!
+            </div>
+
+            <!-- Main Heading with High Contrast -->
+            <div>
+                <p class="text-sm font-bold tracking-wider text-gray-500 uppercase">Start Your Engines</p>
+                <h1 class="font-racing text-4xl sm:text-5xl font-extrabold text-red-600 uppercase mt-0.5 tracking-wide">
+                    ZACHARY
+                </h1>
+                <p class="text-xl font-extrabold text-gray-900 mt-1">IS TURNING 7!</p>
+            </div>
+
+            <!-- Celebrant Photo Box ("kari picture.png") -->
+            <div class="relative mx-auto w-48 h-56 sm:w-52 sm:h-60 rounded-2xl overflow-hidden border-4 border-red-600 shadow-md bg-gray-100">
+                <img 
+                    src="kari picture.png" 
+                    alt="Zachary Birthday Boy" 
+                    class="w-full h-full object-cover object-top"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x500/E51923/FFFFFF?text=Zachary+7th+Birthday';"
+                >
+            </div>
+
+            <!-- Clean & Clear Event Details (Big Text for Easy Reading) -->
+            <div class="bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-left space-y-4">
+                
+                <div class="flex items-start gap-4">
+                    <div class="bg-red-100 p-3 rounded-xl text-red-600 text-xl flex-shrink-0">
+                        📅
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">Date</div>
+                        <div class="text-xl font-bold text-gray-900">November 14th</div>
+                        <div class="text-xs text-gray-600 font-medium">Saturday</div>
+                    </div>
+                </div>
+
+                <hr class="border-gray-200">
+
+                <div class="flex items-start gap-4">
+                    <div class="bg-red-100 p-3 rounded-xl text-red-600 text-xl flex-shrink-0">
+                        ⏰
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">Time</div>
+                        <div class="text-xl font-bold text-gray-900">1:00 PM – 3:00 PM</div>
+                    </div>
+                </div>
+
+                <hr class="border-gray-200">
+
+                <div class="flex items-start gap-4">
+                    <div class="bg-red-100 p-3 rounded-xl text-red-600 text-xl flex-shrink-0">
+                        📍
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">Venue</div>
+                        <div class="text-lg font-bold text-gray-900 leading-snug">Jollibee Zapote Drive Thru</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Helpful Action Buttons (Maps & Calendar) -->
+            <div class="no-print grid grid-cols-2 gap-3">
+                <a href="https://maps.google.com/?q=Jollibee+Zapote+Drive+Thru" target="_blank" class="py-3 px-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold text-xs sm:text-sm rounded-xl border border-gray-300 transition flex items-center justify-center gap-1.5 shadow-sm">
+                    🗺️ Open Map
+                </a>
+                <button onclick="downloadCalendarEvent()" class="py-3 px-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold text-xs sm:text-sm rounded-xl border border-gray-300 transition flex items-center justify-center gap-1.5 shadow-sm">
+                    📅 Add Calendar
+                </button>
+            </div>
+
+            <!-- Senior-Friendly RSVP Section -->
+            <div class="no-print bg-gray-900 text-white rounded-2xl p-5 sm:p-6 text-left space-y-4 shadow-lg border border-gray-800">
+                <div class="border-b border-gray-800 pb-3 text-center">
+                    <h2 class="text-xl font-bold text-white">RSVP Confirmation</h2>
+                    <p class="text-sm text-yellow-400 font-semibold mt-1">We reserved 3 seats for you!</p>
+                    <p class="text-xs text-gray-400 mt-0.5">Please confirm on or before <strong>Oct 24</strong>.</p>
+                </div>
+
+                <form id="rsvp-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                    
+                    <!-- Web3Forms Config -->
+                    <input type="hidden" name="access_key" value="40d2b771-99a8-419a-b2b3-4d39431e95eb">
+                    <input type="hidden" name="subject" value="🏎️ New RSVP Confirmation for Zachary's 7th Birthday">
+                    <input type="hidden" name="from_name" value="Zachary Birthday Website">
+                    <input type="hidden" name="to_email" value="charmelleflores6@gmail.com">
+
+                    <!-- Guest Name Field -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
+                            Your Name / Family Name *
+                        </label>
+                        <input type="text" name="Guest Name" required placeholder="e.g., Lolo Juan & Family" class="w-full bg-white text-gray-900 border-2 border-gray-300 rounded-xl p-3 text-base font-medium placeholder-gray-400 focus:border-red-500 focus:outline-none">
+                    </div>
+
+                    <!-- Attendance Selection with Large Tap Buttons -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
+                            Will you attend? *
+                        </label>
+                        <div class="grid grid-cols-1 gap-2">
+                            <label class="status-option cursor-pointer">
+                                <input type="radio" name="Attendance" value="Yes, we will be there!" checked class="sr-only">
+                                <div class="p-3.5 rounded-xl border-2 border-gray-700 bg-gray-800 text-base font-bold text-green-400 flex items-center justify-between transition">
+                                    <span>🏁 Yes, we'll be there!</span>
+                                    <span class="text-xs bg-green-900/60 text-green-300 px-2 py-0.5 rounded-full font-normal">Attending</span>
+                                </div>
+                            </label>
+
+                            <label class="status-option cursor-pointer">
+                                <input type="radio" name="Attendance" value="Sorry, can't make it" class="sr-only">
+                                <div class="p-3.5 rounded-xl border-2 border-gray-700 bg-gray-800 text-base font-bold text-gray-300 flex items-center justify-between transition">
+                                    <span>❌ Sorry, can't make it</span>
+                                    <span class="text-xs bg-gray-700 text-gray-300 px-2 py-0.5 rounded-full font-normal">Declining</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Number of Seats & Contact Number -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
+                                Number of Seats
+                            </label>
+                            <select name="Number of Attending Seats" class="w-full bg-white text-gray-900 border-2 border-gray-300 rounded-xl p-3 text-base font-semibold focus:border-red-500 focus:outline-none">
+                                <option value="3 Seats">3 Seats (Reserved)</option>
+                                <option value="2 Seats">2 Seats</option>
+                                <option value="1 Seat">1 Seat</option>
+                                <option value="0 Seats">0 Seats</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
+                                Phone Number
+                            </label>
+                            <input type="tel" name="Contact Number" placeholder="0917-XXX-XXXX" class="w-full bg-white text-gray-900 border-2 border-gray-300 rounded-xl p-3 text-base font-medium placeholder-gray-400 focus:border-red-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Short Message -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-1.5">
+                            Short Wish / Message (Optional)
+                        </label>
+                        <textarea name="Message for Zachary" rows="2" placeholder="Happy 7th Birthday Zachary!" class="w-full bg-white text-gray-900 border-2 border-gray-300 rounded-xl p-3 text-base font-medium placeholder-gray-400 focus:border-red-500 focus:outline-none resize-none"></textarea>
+                    </div>
+
+                    <!-- Large, Readable Submit Button -->
+                    <button type="submit" id="submit-btn" class="w-full py-4 bg-red-600 hover:bg-red-700 active:scale-98 text-white font-bold text-lg rounded-xl transition shadow-md flex items-center justify-center gap-2">
+                        <span>SUBMIT RSVP</span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Card Footer Accent -->
+        <div class="w-full h-3 bg-red-600"></div>
+        <div class="w-full h-3 checkered-accent opacity-90"></div>
+    </div>
+
+    <!-- Clear Success Modal for Seniors -->
+    <div id="successModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white border-4 border-red-600 text-gray-900 rounded-3xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl">
+            <div class="text-5xl">🎉</div>
+            <h3 class="text-2xl font-extrabold text-red-600">THANK YOU!</h3>
+            <p class="text-base font-medium text-gray-800">Your RSVP has been submitted successfully!</p>
+            <div class="bg-gray-100 p-4 rounded-xl border border-gray-200 text-sm font-bold text-gray-800">
+                📍 Jollibee Zapote Drive Thru<br>
+                📅 Nov 14th @ 1:00 PM - 3:00 PM
+            </div>
+            <button onclick="closeSuccessModal()" class="w-full py-3 bg-gray-900 hover:bg-black text-white font-bold text-base rounded-xl transition">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Form Submission with Feedback
+        const form = document.getElementById('rsvp-form');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>⏳ Sending... Please wait</span>';
+
+            const formData = new FormData(form);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(async (response) => {
+                if (response.status == 200) {
+                    if (typeof confetti === 'function') {
+                        confetti({ particleCount: 100, spread: 60, origin: { y: 0.6 } });
+                    }
+                    document.getElementById('successModal').classList.remove('hidden');
+                    form.reset();
+                } else {
+                    alert("Something went wrong submitting your RSVP. Please try again or call the host directly.");
+                }
+            })
+            .catch(() => {
+                alert("Connection error. Please check your internet connection.");
+            })
+            .then(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>SUBMIT RSVP</span>';
+            });
+        });
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        // Calendar Event Download
+        function downloadCalendarEvent() {
+            const icsContent = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Zachary Birthday Event//EN
+BEGIN:VEVENT
+SUMMARY:Zachary's 7th Birthday Party 🏎️
+DESCRIPTION:Join us for Zachary's 7th birthday celebration at Jollibee Zapote Drive Thru!
+LOCATION:Jollibee Zapote Drive Thru
+DTSTART:20261114T130000
+DTEND:20261114T150000
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'Zachary_7th_Birthday.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
