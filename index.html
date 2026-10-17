@@ -127,7 +127,7 @@
       text-shadow: 2px 2px 0px #000000;
     }
 
-    /* Full Picture Container & Border */
+    /* Full Picture Frame with Built-in Race Track Design */
     .photo-container {
       display: flex;
       justify-content: center;
@@ -142,12 +142,32 @@
       border-radius: 20px;
       border: 4px solid var(--racing-red);
       outline: 3px solid var(--racing-yellow);
-      background: #000000;
+      background: linear-gradient(135deg, #1a0000 0%, #0d0d0d 50%, #1a1a00 100%);
+      background-image: 
+        radial-gradient(circle at 50% 30%, rgba(255, 23, 68, 0.4) 0%, transparent 70%),
+        repeating-linear-gradient(45deg, #151515 0px, #151515 10px, #0a0a0a 10px, #0a0a0a 20px);
       overflow: hidden;
       box-shadow: 0 0 30px rgba(255, 23, 68, 0.5);
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 10px;
+    }
+
+    .photo-frame-full::before {
+      content: '🏁 RACE TRACK ARENA 🏁';
+      position: absolute;
+      top: 8px;
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--racing-yellow);
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 10px;
+      border-radius: 10px;
+      letter-spacing: 1px;
+      border: 1px solid var(--racing-yellow);
+      z-index: 2;
     }
 
     .photo-frame-full img {
@@ -155,6 +175,9 @@
       height: auto;
       display: block;
       object-fit: contain;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.8));
     }
 
     .details-box {
@@ -414,7 +437,7 @@
         </div>
       </div>
 
-      <!-- Full Uncropped Picture Frame -->
+      <!-- Full Unclipped Picture Frame with Built-In Track Background -->
       <div class="photo-container">
         <div class="photo-frame-full">
           <img src="zachary.png" alt="Zachary" onerror="this.onerror=null; this.src='https://via.placeholder.com/380x380?text=Zachary';">
