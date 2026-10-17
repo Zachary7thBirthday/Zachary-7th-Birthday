@@ -10,13 +10,12 @@
     :root {
       --racing-red: #E52421;
       --racing-red-dark: #B71C1C;
-      --racing-black: #111111;
       --racing-yellow: #FFD600;
-      --bg-gray: #F0F2F5;
+      --racing-black: #111111;
       --card-bg: #FFFFFF;
-      --text: #111111;
+      --text-dark: #111111;
       --text-muted: #555555;
-      --border: #E0E0E0;
+      --border: #222222;
     }
 
     * {
@@ -27,27 +26,32 @@
 
     body {
       font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-gray);
-      color: var(--text);
+      background-color: #0d0d0d;
+      background-image: 
+        radial-gradient(circle at 50% 20%, rgba(229, 36, 33, 0.25) 0%, transparent 60%),
+        linear-gradient(135deg, #141414 25%, #0d0d0d 25%, #0d0d0d 50%, #141414 50%, #141414 75%, #0d0d0d 75%, #0d0d0d 100%);
+      background-size: 100% 100%, 20px 20px;
+      color: var(--text-dark);
       line-height: 1.5;
       font-size: 18px;
-      padding: 16px 8px;
+      padding: 20px 10px;
+      min-height: 100vh;
     }
 
     .invitation-card {
       max-width: 580px;
       margin: 0 auto;
       background: var(--card-bg);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border-radius: 24px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(229, 36, 33, 0.3);
       overflow: hidden;
-      border: 3px solid var(--racing-black);
+      border: 4px solid var(--racing-black);
       position: relative;
     }
 
-    /* Checkered Header Banner */
+    /* Double Checkered Top Banner */
     .checkered-header {
-      height: 24px;
+      height: 28px;
       background: repeating-linear-gradient(
         90deg,
         #000 0px,
@@ -55,31 +59,33 @@
         #fff 20px,
         #fff 40px
       );
-      border-bottom: 4px solid var(--racing-red);
+      border-bottom: 5px solid var(--racing-red);
     }
 
     .content-padding {
-      padding: 24px 20px;
+      padding: 28px 22px;
     }
 
     /* Header & Titles */
     .header-text {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      position: relative;
     }
 
     .badge-tag {
       display: inline-block;
-      background-color: var(--racing-black);
+      background: linear-gradient(135deg, #111, #222);
       color: var(--racing-yellow);
       font-weight: 900;
-      font-size: 15px;
-      padding: 8px 18px;
+      font-size: 16px;
+      padding: 8px 22px;
       border-radius: 50px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      border: 2px solid var(--racing-yellow);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .title-sub {
@@ -92,45 +98,49 @@
     }
 
     .title-main {
-      font-size: 48px;
+      font-size: 52px;
       font-weight: 900;
       color: var(--racing-black);
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       line-height: 1;
       margin: 6px 0;
-      text-shadow: 2px 2px 0px rgba(229, 36, 33, 0.2);
+      text-shadow: 3px 3px 0px var(--racing-yellow), 5px 5px 0px rgba(0,0,0,0.15);
     }
 
-    .title-age {
-      font-size: 26px;
+    .title-age-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--racing-red);
+      color: #FFFFFF;
+      font-size: 24px;
       font-weight: 900;
-      color: var(--racing-red);
-      background-color: #FFF3F3;
-      display: inline-block;
-      padding: 4px 16px;
-      border-radius: 8px;
-      border: 2px dashed var(--racing-red);
+      padding: 6px 20px;
+      border-radius: 12px;
+      border: 2px solid var(--racing-black);
+      box-shadow: 4px 4px 0px var(--racing-black);
+      margin-top: 6px;
     }
 
-    /* Perfectly Centered Photo Section */
+    /* Fixed & Scaled Centered Photo Badge */
     .photo-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 24px 0;
+      margin: 28px 0;
       width: 100%;
     }
 
     .photo-frame {
-      width: 250px;
-      height: 250px;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
-      border: 6px solid var(--racing-red);
-      outline: 4px solid var(--racing-black);
-      background-color: #F8F8F8;
+      border: 8px solid var(--racing-red);
+      outline: 5px solid var(--racing-black);
+      background: radial-gradient(circle, #ffffff 40%, #f0f0f0 100%);
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(229, 36, 33, 0.25);
+      box-shadow: 0 10px 25px rgba(229, 36, 33, 0.4), inset 0 0 15px rgba(0,0,0,0.1);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -138,20 +148,36 @@
     }
 
     .photo-frame img {
-      width: 100%;
-      height: 100%;
+      width: 115%;
+      height: 115%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 15%;
     }
 
     /* Event Details Box */
     .details-box {
-      background-color: #FAFAFA;
-      border: 2px solid var(--racing-black);
-      border-radius: 16px;
-      padding: 20px;
+      background: #FFFFFF;
+      border: 3px solid var(--racing-black);
+      border-radius: 18px;
+      padding: 22px;
       margin-bottom: 24px;
-      box-shadow: 4px 4px 0px var(--racing-black);
+      box-shadow: 6px 6px 0px var(--racing-black);
+      position: relative;
+    }
+
+    .details-box::before {
+      content: '🏁 OFFICIAL RACE DETAILS 🏁';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--racing-black);
+      color: #FFF;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 3px 14px;
+      border-radius: 20px;
+      letter-spacing: 1px;
     }
 
     .detail-item {
@@ -159,7 +185,7 @@
       align-items: center;
       margin-bottom: 16px;
       padding-bottom: 12px;
-      border-bottom: 1px dashed var(--border);
+      border-bottom: 2px dashed #E0E0E0;
     }
 
     .detail-item:last-child {
@@ -169,10 +195,17 @@
     }
 
     .detail-icon {
-      font-size: 30px;
+      font-size: 32px;
       margin-right: 16px;
-      width: 40px;
-      text-align: center;
+      width: 44px;
+      height: 44px;
+      background-color: #FFF8E1;
+      border: 2px solid var(--racing-black);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 0px var(--racing-black);
     }
 
     .detail-info {
@@ -208,56 +241,60 @@
       gap: 8px;
       padding: 14px 16px;
       background-color: #FFFFFF;
-      border: 2px solid var(--racing-black);
+      border: 3px solid var(--racing-black);
       color: var(--racing-black);
       border-radius: 12px;
       font-size: 16px;
-      font-weight: 800;
+      font-weight: 900;
       text-decoration: none;
-      box-shadow: 3px 3px 0px var(--racing-black);
+      box-shadow: 4px 4px 0px var(--racing-black);
       transition: all 0.15s ease;
     }
 
     .btn-action:active {
       transform: translate(2px, 2px);
-      box-shadow: 1px 1px 0px var(--racing-black);
+      box-shadow: 2px 2px 0px var(--racing-black);
     }
 
     /* RSVP Section */
     .rsvp-section {
-      border-top: 3px solid var(--racing-black);
+      border-top: 4px solid var(--racing-black);
       padding-top: 28px;
-      position: relative;
+      background: #FAFAFA;
+      margin: 0 -22px -28px -22px;
+      padding-left: 22px;
+      padding-right: 22px;
+      padding-bottom: 28px;
     }
 
     .rsvp-title {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 900;
       text-align: center;
       color: var(--racing-black);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
 
     .rsvp-subtitle {
       text-align: center;
-      color: var(--text-muted);
-      font-size: 16px;
+      color: var(--racing-red);
+      font-size: 17px;
       margin-bottom: 20px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .seats-alert {
       background-color: #FFFDE7;
-      border: 2px solid var(--racing-yellow);
-      padding: 12px 16px;
-      border-radius: 10px;
-      font-size: 16px;
+      border: 2px solid var(--racing-black);
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: 17px;
       font-weight: 800;
       color: var(--racing-black);
       margin-bottom: 24px;
       text-align: center;
-      box-shadow: 3px 3px 0px rgba(0,0,0,0.08);
+      box-shadow: 4px 4px 0px var(--racing-yellow);
     }
 
     .form-group {
@@ -266,7 +303,7 @@
 
     .form-label {
       display: block;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 800;
       margin-bottom: 8px;
       color: var(--racing-black);
@@ -277,8 +314,8 @@
       padding: 14px 16px;
       font-size: 18px;
       font-weight: 700;
-      border: 2px solid var(--racing-black);
-      border-radius: 10px;
+      border: 3px solid var(--racing-black);
+      border-radius: 12px;
       background-color: #FFFFFF;
       color: var(--racing-black);
     }
@@ -286,7 +323,7 @@
     .form-control:focus {
       outline: none;
       border-color: var(--racing-red);
-      box-shadow: 0 0 0 3px rgba(229, 36, 33, 0.2);
+      box-shadow: 0 0 0 4px rgba(229, 36, 33, 0.2);
     }
 
     .radio-group {
@@ -298,20 +335,20 @@
     .radio-card {
       display: flex;
       align-items: center;
-      padding: 14px 16px;
-      border: 2px solid var(--racing-black);
-      border-radius: 10px;
+      padding: 16px;
+      border: 3px solid var(--racing-black);
+      border-radius: 12px;
       cursor: pointer;
       font-weight: 800;
       font-size: 18px;
       background-color: #FFFFFF;
-      box-shadow: 3px 3px 0px rgba(0,0,0,0.05);
+      box-shadow: 3px 3px 0px var(--racing-black);
     }
 
     .radio-card input[type="radio"] {
       width: 24px;
       height: 24px;
-      margin-right: 12px;
+      margin-right: 14px;
       accent-color: var(--racing-red);
     }
 
@@ -320,25 +357,29 @@
       padding: 18px;
       background-color: var(--racing-red);
       color: white;
-      border: 2px solid var(--racing-black);
-      border-radius: 12px;
+      border: 3px solid var(--racing-black);
+      border-radius: 14px;
       font-size: 22px;
       font-weight: 900;
       cursor: pointer;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      box-shadow: 4px 4px 0px var(--racing-black);
+      letter-spacing: 2px;
+      box-shadow: 5px 5px 0px var(--racing-black);
       margin-top: 12px;
       transition: all 0.15s ease;
     }
 
+    .btn-submit:hover {
+      background-color: var(--racing-red-dark);
+    }
+
     .btn-submit:active {
       transform: translate(2px, 2px);
-      box-shadow: 2px 2px 0px var(--racing-black);
+      box-shadow: 3px 3px 0px var(--racing-black);
     }
 
     .footer-stripe {
-      height: 16px;
+      height: 20px;
       background: repeating-linear-gradient(
         45deg,
         #000,
@@ -346,7 +387,7 @@
         #fff 15px,
         #fff 30px
       );
-      border-top: 3px solid var(--racing-red);
+      border-top: 4px solid var(--racing-red);
       margin-top: 24px;
     }
 
@@ -355,14 +396,15 @@
       text-align: center;
       padding: 24px;
       background-color: #E8F5E9;
-      border: 2px solid #2E7D32;
-      border-radius: 12px;
+      border: 3px solid #2E7D32;
+      border-radius: 14px;
       margin-top: 20px;
+      box-shadow: 4px 4px 0px #2E7D32;
     }
 
     #success-message h3 {
       color: #2E7D32;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 900;
       margin-bottom: 8px;
     }
@@ -375,16 +417,18 @@
 
     <div class="content-padding">
       <div class="header-text">
-        <span class="badge-tag">🏁 YOU ARE INVITED!</span>
+        <span class="badge-tag">🏎️ VIP PASS #07</span>
         <div class="title-sub">Start Your Engines</div>
         <h1 class="title-main">ZACHARY</h1>
-        <div class="title-age">IS TURNING 7!</div>
+        <div class="title-age-badge">
+          <span>🏆 IS TURNING 7!</span>
+        </div>
       </div>
 
-      <!-- Perfectly Centered Photo -->
+      <!-- Prominent Centered Portrait Photo -->
       <div class="photo-container">
         <div class="photo-frame">
-          <img src="kari.jpg" alt="Zachary" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x250?text=Zachary';">
+          <img src="kari.jpg" alt="Zachary" onerror="this.onerror=null; this.src='https://via.placeholder.com/260x260?text=Zachary';">
         </div>
       </div>
 
@@ -427,8 +471,8 @@
 
       <!-- RSVP Section -->
       <div class="rsvp-section">
-        <h2 class="rsvp-title">RSVP</h2>
-        <p class="rsvp-subtitle">Please respond on or before <strong>October 24</strong></p>
+        <h2 class="rsvp-title">RSVP CONFIRMATION</h2>
+        <p class="rsvp-subtitle">Please respond on or before October 24</p>
 
         <div class="seats-alert">
           🎟️ We have reserved <strong>3 seats</strong> for your family.
