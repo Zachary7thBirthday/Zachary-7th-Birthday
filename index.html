@@ -62,7 +62,6 @@
       padding: 28px 20px;
     }
 
-    /* Header & Titles */
     .header-text {
       text-align: center;
       margin-bottom: 24px;
@@ -128,7 +127,7 @@
       text-shadow: 2px 2px 0px #000000;
     }
 
-    /* Centered & Zoomed Photo Section */
+    /* Extra Zoom Frame Fix */
     .photo-container {
       display: flex;
       justify-content: center;
@@ -149,16 +148,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
 
     .photo-frame img {
-      width: 220%;
-      height: 220%;
+      width: 300%;
+      height: 300%;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center 20%;
     }
 
-    /* Details Box */
     .details-box {
       background: #1E1E1E;
       border: 2px solid var(--racing-red);
@@ -229,7 +228,6 @@
       color: #FFFFFF;
     }
 
-    /* Action Buttons */
     .action-buttons {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -254,12 +252,6 @@
       transition: all 0.2s ease;
     }
 
-    .btn-action:hover {
-      background-color: var(--racing-yellow);
-      color: #000000;
-    }
-
-    /* RSVP Section */
     .rsvp-section {
       border-top: 3px solid var(--racing-red);
       padding-top: 28px;
@@ -418,14 +410,12 @@
         </div>
       </div>
 
-      <!-- Centered Photo Frame with CSS Auto-Zoom -->
       <div class="photo-container">
         <div class="photo-frame">
           <img src="kari.jpg" alt="Zachary" onerror="this.onerror=null; this.src='https://via.placeholder.com/270x270?text=Zachary';">
         </div>
       </div>
 
-      <!-- Event Details Box -->
       <div class="details-box">
         <div class="detail-item">
           <div class="detail-icon">📅</div>
@@ -452,7 +442,6 @@
         </div>
       </div>
 
-      <!-- Quick Action Buttons -->
       <div class="action-buttons">
         <a href="https://maps.google.com/?q=Jollibee+Zapote+Drive+Thru" target="_blank" class="btn-action">
           🗺️ Open Map
@@ -462,7 +451,6 @@
         </a>
       </div>
 
-      <!-- RSVP Section -->
       <div class="rsvp-section">
         <h2 class="rsvp-title">RSVP CONFIRMATION</h2>
         <p class="rsvp-subtitle">Please respond on or before October 24</p>
@@ -495,7 +483,6 @@
             </div>
           </div>
 
-          <!-- Conditional Seats Selection -->
           <div class="form-group" id="seats-group">
             <label class="form-label" for="seats-count">Number of Attending Guests:</label>
             <select id="seats-count" name="Number_of_Seats" class="form-control">
