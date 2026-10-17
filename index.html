@@ -127,7 +127,7 @@
       text-shadow: 2px 2px 0px #000000;
     }
 
-    /* Full Picture Frame with Built-in Race Track Design */
+    /* Photo Container & Full Frame */
     .photo-container {
       display: flex;
       justify-content: center;
@@ -136,48 +136,70 @@
       width: 100%;
     }
 
+    /* High Impact Race Track Background Frame Created with CSS/SVG */
     .photo-frame-full {
       width: 100%;
       max-width: 400px;
+      min-height: 420px;
       border-radius: 20px;
       border: 4px solid var(--racing-red);
       outline: 3px solid var(--racing-yellow);
-      background: linear-gradient(135deg, #1a0000 0%, #0d0d0d 50%, #1a1a00 100%);
-      background-image: 
-        radial-gradient(circle at 50% 30%, rgba(255, 23, 68, 0.4) 0%, transparent 70%),
-        repeating-linear-gradient(45deg, #151515 0px, #151515 10px, #0a0a0a 10px, #0a0a0a 20px);
       overflow: hidden;
-      box-shadow: 0 0 30px rgba(255, 23, 68, 0.5);
+      box-shadow: 0 0 35px rgba(255, 23, 68, 0.6);
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 10px;
+      align-items: flex-end;
+
+      /* Multi-Layer Race Track Background Graphic */
+      background: 
+        /* Stadium Spotlight Glowing Beams */
+        radial-gradient(ellipse at 20% 0%, rgba(255, 234, 0, 0.35) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 0%, rgba(255, 23, 68, 0.45) 0%, transparent 50%),
+        /* Dynamic Speed Lines Gradient */
+        linear-gradient(180deg, #11111d 0%, #1f050b 40%, #0a0a0a 100%);
     }
 
-    .photo-frame-full::before {
-      content: '🏁 RACE TRACK ARENA 🏁';
+    /* SVG Overlay Graphic for Checkered Flags & Race Track Lines */
+    .track-bg-overlay {
       position: absolute;
-      top: 8px;
-      background: rgba(0, 0, 0, 0.7);
-      color: var(--racing-yellow);
-      font-size: 11px;
-      font-weight: 900;
-      padding: 2px 10px;
-      border-radius: 10px;
-      letter-spacing: 1px;
-      border: 1px solid var(--racing-yellow);
-      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
     }
 
+    /* Zachary's Image Mounted Over the Track Background */
     .photo-frame-full img {
       width: 100%;
       height: auto;
+      max-height: 410px;
       display: block;
       object-fit: contain;
       position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.8));
+      z-index: 2;
+      filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.9));
+    }
+
+    /* VIP Track Badge at top of photo */
+    .track-badge {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000000;
+      color: var(--racing-yellow);
+      font-size: 12px;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 12px;
+      letter-spacing: 1.5px;
+      border: 1.5px solid var(--racing-yellow);
+      box-shadow: 0 0 10px rgba(255, 234, 0, 0.5);
+      z-index: 3;
+      white-space: nowrap;
     }
 
     .details-box {
@@ -437,9 +459,43 @@
         </div>
       </div>
 
-      <!-- Full Unclipped Picture Frame with Built-In Track Background -->
+      <!-- Photo Frame with Graphic Race Track Background Built-In -->
       <div class="photo-container">
         <div class="photo-frame-full">
+          <div class="track-badge">🏁 GRAND PRIX CIRCUIT 🏁</div>
+          
+          <!-- SVG Decorative Elements Behind Zachary -->
+          <svg class="track-bg-overlay" viewBox="0 0 400 420" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left Checkered Flag Overlay -->
+            <path d="M 0 0 L 140 0 L 0 160 Z" fill="url(#checkeredPattern)" opacity="0.45" />
+            
+            <!-- Right Checkered Flag Overlay -->
+            <path d="M 260 0 L 400 0 L 400 160 Z" fill="url(#checkeredPattern)" opacity="0.45" />
+
+            <!-- Track Speed Lines / Racing Strips -->
+            <polygon points="170,0 230,0 260,420 140,420" fill="#FF1744" opacity="0.25" />
+            <polygon points="188,0 212,0 218,420 182,420" fill="#FFEA00" opacity="0.85" />
+            <line x1="200" y1="0" x2="200" y2="420" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="15,15" opacity="0.9" />
+
+            <!-- Curved Race Track Road Borders -->
+            <path d="M -20 420 Q 100 250 80 0" stroke="#FF1744" stroke-width="8" fill="none" opacity="0.6" />
+            <path d="M 420 420 Q 300 250 320 0" stroke="#FFEA00" stroke-width="8" fill="none" opacity="0.6" />
+
+            <!-- Stadium Lights Flares -->
+            <circle cx="50" cy="30" r="30" fill="#FFEA00" filter="blur(15px)" opacity="0.6" />
+            <circle cx="350" cy="30" r="30" fill="#FF1744" filter="blur(15px)" opacity="0.6" />
+
+            <defs>
+              <pattern id="checkeredPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect width="10" height="10" fill="#FFFFFF"/>
+                <rect x="10" width="10" height="10" fill="#000000"/>
+                <rect y="10" width="10" height="10" fill="#000000"/>
+                <rect x="10" y="10" width="10" height="10" fill="#FFFFFF"/>
+              </pattern>
+            </defs>
+          </svg>
+
+          <!-- Zachary's Photo -->
           <img src="zachary.png" alt="Zachary" onerror="this.onerror=null; this.src='https://via.placeholder.com/380x380?text=Zachary';">
         </div>
       </div>
